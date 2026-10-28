@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Bio Link - Registration</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            margin: 0;
+            padding: 30px 15px;
+        }
+
+        .container {
+            max-width: 450px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px #00000015;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4f46e5;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input:not([type="checkbox"]),
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border: 1px solid #cbd5e1;
+            border-radius: 5px;
+        }
+
+        .terms {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: normal;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            background: #4f46e5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #3730a3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Create Your Bio Link</h1>
+        <p>Register to create your social profile.</p>
+
+        <form action="https://httpbin.org/post" method="POST">
+
+            <label for="fullname">Full Name</label>
+            <input
+                type="text"
+                id="fullname"
+                name="fullname"
+                placeholder="Enter your full name"
+                minlength="2"
+                maxlength="50"
+                autocomplete="name"
+                required>
+
+            <label for="email">Email Address</label>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="you@example.com"
+                autocomplete="email"
+                required>
+
+            <label for="password">Password</label>
+            <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="At least 8 characters"
+                minlength="8"
+                autocomplete="new-password"
+                required>
+
+            <label for="username">Profile Username</label>
+            <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="your_username"
+                pattern="[A-Za-z0-9_]{3,20}"
+                title="Use 3–20 letters, numbers, or underscores"
+                required>
+
+            <label for="category">Profile Category</label>
+            <select id="category" name="category" required>
+                <option value="">Choose a category</option>
+                <option value="personal">Personal</option>
+                <option value="creator">Content Creator</option>
+                <option value="business">Business</option>
+                <option value="student">Student</option>
+            </select>
+
+            <label for="bio">Short Bio</label>
+            <textarea
+                id="bio"
+                name="bio"
+                rows="4"
+                maxlength="160"
+                placeholder="Tell us about yourself"></textarea>
+
+            <label class="terms">
+                <input
+                    type="checkbox"
+                    name="terms"
+                    value="accepted"
+                    required>
+                I agree to the terms and conditions.
+            </label>
+
+            <button type="submit">Register</button>
+
+        </form>
+    </div>
+
+</body>
+</html>

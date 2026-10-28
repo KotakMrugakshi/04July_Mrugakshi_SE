@@ -1,0 +1,292 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>YouTube Style Layout</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #222;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            padding: 15px 25px;
+            background-color: white;
+            border-bottom: 1px solid #ddd;
+            position: sticky;
+            top: 0;
+        }
+
+        .logo {
+            color: #ff0000;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        header form {
+            display: flex;
+            flex: 1;
+            max-width: 500px;
+        }
+
+        header input {
+            flex: 1;
+            min-width: 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 20px 0 0 20px;
+        }
+
+        header button {
+            padding: 10px 18px;
+            border: 1px solid #ccc;
+            border-radius: 0 20px 20px 0;
+            cursor: pointer;
+        }
+
+        /* Navigation */
+        nav {
+            width: 190px;
+            position: fixed;
+            top: 65px;
+            bottom: 0;
+            padding: 20px 12px;
+            background-color: white;
+        }
+
+        nav a {
+            display: block;
+            text-decoration: none;
+            color: #222;
+            padding: 13px;
+            border-radius: 8px;
+            margin-bottom: 5px;
+        }
+
+        nav a:hover {
+            background-color: #eee;
+        }
+
+        /* Main content */
+        main {
+            margin-left: 210px;
+            padding: 25px;
+        }
+
+        h1 {
+            font-size: 25px;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 25px 18px;
+        }
+
+        article {
+            min-width: 0;
+        }
+
+        article img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            border-radius: 10px;
+            background-color: #ddd;
+        }
+
+        article h2 {
+            font-size: 16px;
+            margin: 10px 0 6px;
+        }
+
+        article p {
+            color: #666;
+            font-size: 13px;
+            margin: 5px 0;
+        }
+
+        footer {
+            margin-left: 210px;
+            padding: 20px;
+            background-color: white;
+            border-top: 1px solid #ddd;
+            text-align: center;
+            color: #666;
+        }
+
+        /* Responsive layout */
+        @media (max-width: 900px) {
+            .video-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 12px;
+                flex-wrap: wrap;
+            }
+
+            header form {
+                order: 2;
+                flex-basis: 100%;
+                max-width: none;
+            }
+
+            nav {
+                position: static;
+                width: auto;
+                padding: 8px;
+                display: flex;
+                overflow-x: auto;
+                gap: 5px;
+            }
+
+            nav a {
+                white-space: nowrap;
+                margin: 0;
+            }
+
+            main {
+                margin-left: 0;
+                padding: 15px;
+            }
+
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">▶ YouTube</div>
+
+        <form action="https://www.youtube.com/results" method="get">
+            <input
+                type="search"
+                name="search_query"
+                placeholder="Search videos..."
+                aria-label="Search videos">
+
+            <button type="submit">Search</button>
+        </form>
+    </header>
+
+    <!-- Navigation -->
+    <nav aria-label="Main navigation">
+        <a href="https://www.youtube.com/">🏠 Home</a>
+        <a href="https://www.youtube.com/feed/trending">🔥 Trending</a>
+        <a href="https://www.youtube.com/feed/subscriptions">
+            📺 Subscriptions
+        </a>
+        <a href="https://www.youtube.com/feed/history">🕘 History</a>
+        <a href="https://www.youtube.com/feed/library">📚 Library</a>
+    </nav>
+
+    <!-- Main content -->
+    <main>
+        <h1>Recommended Videos</h1>
+
+        <section class="video-grid" aria-label="Recommended videos">
+
+            <article>
+                <a href="https://www.youtube.com/results?search_query=HTML+tutorial">
+                    <img
+                        src="https://placehold.co/640x360/263238/ffffff?text=HTML+Tutorial"
+                        alt="HTML tutorial thumbnail">
+                </a>
+                <h2>Learn HTML for Beginners</h2>
+                <p>Web Design Academy</p>
+                <p>120K views · 2 days ago</p>
+            </article>
+
+            <article>
+                <a href="https://www.youtube.com/results?search_query=CSS+tutorial">
+                    <img
+                        src="https://placehold.co/640x360/1565c0/ffffff?text=CSS+Tutorial"
+                        alt="CSS tutorial thumbnail">
+                </a>
+                <h2>CSS Complete Tutorial</h2>
+                <p>Code Learning</p>
+                <p>85K views · 1 week ago</p>
+            </article>
+
+            <article>
+                <a href="https://www.youtube.com/results?search_query=JavaScript+tutorial">
+                    <img
+                        src="https://placehold.co/640x360/827717/ffffff?text=JavaScript"
+                        alt="JavaScript tutorial thumbnail">
+                </a>
+                <h2>JavaScript Basics</h2>
+                <p>Programming World</p>
+                <p>200K views · 3 days ago</p>
+            </article>
+
+            <article>
+                <a href="https://www.youtube.com/results?search_query=web+development">
+                    <img
+                        src="https://placehold.co/640x360/6a1b9a/ffffff?text=Web+Development"
+                        alt="Web development thumbnail">
+                </a>
+                <h2>Complete Web Development Guide</h2>
+                <p>Tech Classroom</p>
+                <p>95K views · 5 days ago</p>
+            </article>
+
+            <article>
+                <a href="https://www.youtube.com/results?search_query=HTML5+semantic+tags">
+                    <img
+                        src="https://placehold.co/640x360/00695c/ffffff?text=HTML5+Semantic"
+                        alt="HTML5 semantic tags thumbnail">
+                </a>
+                <h2>Understanding Semantic HTML5</h2>
+                <p>Web Design Academy</p>
+                <p>40K views · 1 day ago</p>
+            </article>
+
+            <article>
+                <a href="https://www.youtube.com/results?search_query=responsive+web+design">
+                    <img
+                        src="https://placehold.co/640x360/ad1457/ffffff?text=Responsive+Design"
+                        alt="Responsive web design thumbnail">
+                </a>
+                <h2>Responsive Web Design</h2>
+                <p>Code Learning</p>
+                <p>60K views · 4 days ago</p>
+            </article>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 My Video Website. Created for HTML5 practice.</p>
+    </footer>
+
+</body>
+</html>

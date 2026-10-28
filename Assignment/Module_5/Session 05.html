@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card Layout</title>
+
+    <!-- Connect external CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Fixed position navigation bar -->
+    <nav class="navbar">
+        <h2>My Profile</h2>
+        <span>CSS Box Model Practical</span>
+    </nav>
+
+    <main class="page-container">
+
+        <!-- Profile card -->
+        <div class="profile-card">
+
+            <!-- Absolute position badge -->
+            <span class="status-badge">Available</span>
+
+            <div class="profile-header">
+                <img
+                    class="profile-image"
+                    src="https://placehold.co/150x150/2563eb/ffffff?text=Profile"
+                    alt="Profile picture"
+                >
+
+                <h1>Alex Johnson</h1>
+                <h3>Web Designer</h3>
+            </div>
+
+            <p class="description">
+                I enjoy creating beautiful and responsive websites
+                using HTML, CSS, and JavaScript.
+            </p>
+
+            <div class="skills">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+            </div>
+
+            <a class="contact-button" href="mailto:alex@example.com">
+                Contact Me
+            </a>
+
+        </div>
+
+        <section class="explanation">
+            <h2>CSS Box Model & Positioning</h2>
+
+            <p><strong>Margin:</strong> Space outside an element.</p>
+            <p><strong>Padding:</strong> Space between content and border.</p>
+            <p><strong>Border:</strong> The outline around an element.</p>
+            <p><strong>Display:</strong> Controls how elements are laid out.</p>
+            <p><strong>Relative:</strong> Positions an element relative to its normal position.</p>
+            <p><strong>Absolute:</strong> Positions an element relative to its nearest positioned ancestor.</p>
+            <p><strong>Fixed:</strong> Keeps an element in a fixed place on the screen while scrolling.</p>
+        </section>
+
+    </main>
+
+    <!-- Fixed position button -->
+    <a href="#" class="top-button" aria-label="Back to top">↑</a>
+
+</body>
+</html>

@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Social Bio Link Page</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header class="site-header">
+        <h1>LinkSpace</h1>
+        <p>Your links. Your identity.</p>
+    </header>
+
+    <main class="container">
+
+        <!-- Form Section -->
+        <section class="editor">
+            <h2>Customize Your Profile</h2>
+            <p class="section-description">
+                Enter your details and social media links.
+            </p>
+
+            <form id="profileForm">
+
+                <label for="userName">Your Name</label>
+                <input
+                    type="text"
+                    id="userName"
+                    placeholder="Enter your name"
+                    value="Your Name"
+                    maxlength="60"
+                    required
+                >
+
+                <label for="userBio">Short Bio</label>
+                <textarea
+                    id="userBio"
+                    rows="3"
+                    maxlength="200"
+                    placeholder="Write something about yourself"
+                >Creator | Music Lover | Developer</textarea>
+
+                <label for="instagram">Instagram URL</label>
+                <input
+                    type="url"
+                    id="instagram"
+                    placeholder="https://instagram.com/username"
+                >
+
+                <label for="linkedin">LinkedIn URL</label>
+                <input
+                    type="url"
+                    id="linkedin"
+                    placeholder="https://linkedin.com/in/username"
+                >
+
+                <label for="spotify">Spotify URL</label>
+                <input
+                    type="url"
+                    id="spotify"
+                    placeholder="https://open.spotify.com/..."
+                >
+
+                <label for="github">GitHub URL</label>
+                <input
+                    type="url"
+                    id="github"
+                    placeholder="https://github.com/username"
+                >
+
+                <button type="submit" class="save-btn">
+                    Update Preview
+                </button>
+
+                <p id="formMessage" class="form-message"
+                   aria-live="polite"></p>
+
+            </form>
+        </section>
+
+        <!-- Preview Section -->
+        <section class="preview-section">
+            <h2>Live Preview</h2>
+            <p class="section-description">
+                Your public profile will look like this.
+            </p>
+
+            <div class="profile-preview">
+
+                <div class="avatar" aria-hidden="true">👤</div>
+
+                <h2 id="previewName">Your Name</h2>
+
+                <p id="previewBio">
+                    Creator | Music Lover | Developer
+                </p>
+
+                <div id="previewLinks" class="preview-links">
+
+                    <a class="social-card instagram"
+                       href="https://www.instagram.com/"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        <span>📸</span> Instagram <span>↗</span>
+                    </a>
+
+                    <a class="social-card linkedin"
+                       href="https://www.linkedin.com/"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        <span>💼</span> LinkedIn <span>↗</span>
+                    </a>
+
+                    <a class="social-card spotify"
+                       href="https://open.spotify.com/"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        <span>🎵</span> Spotify <span>↗</span>
+                    </a>
+
+                    <a class="social-card github"
+                       href="https://github.com/"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        <span>💻</span> GitHub <span>↗</span>
+                    </a>
+
+                </div>
+
+                <p class="preview-footer">Made with LinkSpace ♥</p>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 LinkSpace | Social Bio Link Demo</p>
+    </footer>
+
+</body>
+</html>
